@@ -1,9 +1,9 @@
-from flask import Flask, render_template,request
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 
-@app.route('/',methods=('GET', 'POST'))
+@app.route('/', methods=('GET', 'POST'))
 def home():
     valor1 = None
     valor2 = None
@@ -36,28 +36,28 @@ def home():
         if escolha == 'gengar':
             valor1 = 50
 
-        
         valor2 = 200
         valor3 = 200
 
     return render_template(
         'index.html',
-        imagem1 = imagem1,     
-        imagem2 = imagem2,
-        imagem3 = imagem3,
-        imagem4 = imagem4,
-        imagem5 = imagem5,
-        imagem6 = imagem6,
-        imagem7 = imagem7,
-        imagemAT1 = imagemAT1,
-        imagemAT2 = imagemAT2,
-        imagemAT3 = imagemAT3,
-        valor1 = valor1, 
-        valor2 = valor2,
-        valor3 = valor3   
+        imagem1=imagem1,
+        imagem2=imagem2,
+        imagem3=imagem3,
+        imagem4=imagem4,
+        imagem5=imagem5,
+        imagem6=imagem6,
+        imagem7=imagem7,
+        imagemAT1=imagemAT1,
+        imagemAT2=imagemAT2,
+        imagemAT3=imagemAT3,
+        valor1=valor1,
+        valor2=valor2,
+        valor3=valor3
 
 
     )
+
 
 if __name__ == '__main__':
     app.run(debug=True)
