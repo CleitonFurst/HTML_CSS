@@ -8,80 +8,97 @@
     <title>Calculadora de Danos</title>
     <link rel="stylesheet" href="../static/style.css" type="text/css">
 
+
+
 </head>
 
 <body>
-             <div class="container">
-                <form method="POST">
-                    <div class="linha_container">
-                        <h1>Seus Pokmons</h1>
-                    </div><!--linha_container -->
+    <div class="container">
+        <form method="POST">
+            <div class="linha_container">
+                <h1>Seus Pokmons</h1>
+            </div>
+            <!--linha_container -->
 
-                    <div class="pokmons_1">
-                        <div class="personagem1">
-                            <a href="#openModal"> <img src="{{imagem1}}" alt="lugia" width="300" height='300' /></a>
-                            <input class='radio' type="radio" name="escolha" id="escolha2" value='gengar' checked />
-                            <div id="openModal" class="modalDialog">
-                                <div>
-                                    <a href="#close" title="Close" class="close"><img src="{{imagemAT1}}" alt="gastly" /></a>
+            <div class="pokemons_1">
+                <div class="personagem1" id="borda">
+                    <a href="#openModal" id="open_href1"></a>
+                    <img src="imagem1" alt="lugia" width="300" height='300' onclick="borda('borda')" />
 
-                                </div>
-                            </div>
-                            <span>Lugia</span>
-                        </div><!--personagem1-->
 
-                        <div class="personagem2">
-                            <a href="#openModal2"><img src="{{imagem2}}" alt="dragonite" width="300" height='300' /></a>
+                    <div id="openModal" class="modalDialog">
+                        <div>
+                            <a href="#close" title="Close" class="close"><img src="{{imagemAT1}}" alt="lugia" /></a>
 
-                            <div id="openModal2" class="modalDialog">
-                                <div>
-                                    <a href="#close" title="Close" class="close2"><img src="{{imagemAT2}}" alt="gastly" /></a>
-
-                                </div>
-                            </div>
-                            <span>Dragonite</span>
                         </div>
-                        <!--personagem2-->
-                        <div class="personagem3">
-                            <a href="#openModal3"><img src="{{imagem3}}" alt="charizard" width="300" height="300" /></a>
-
-                            <div id="openModal3" class="modalDialog">
-                                <div>
-                                    <a href="#close" title="Close" class="close3"><img src="{{imagemAT3}}" alt="gastly" /></a>
-                                </div>
-                            </div>
-                            <span>Mega Charizard X</span>
-                        </div>
-                        <!--personagem3-->
-                    </div><!--pokmons_1-->          
-                    
-                    <div class="form_bloco">
-                        <input type="submit" class="form_enviar" value="Enviar!" />
-                    </div><!--form_bloco-->
-                </form>
-
-            </div><!--container-->
-            <div class = 'container'>
-                <div class="linha_container">
-                    <h1>Pokmons Inimigos</h1>
+                    </div>
+                    <span>Lugia</span>
                 </div>
-                <div class="pokmons_2">
-                    <div class="personagem4"> 
-                        <progress class="progress-bar" value={{valor1}} max="100" ></progress> 
-                        <img src="{{imagem4}}" alt="gengar" width="300" height='300' />                    
-                        <label for=escolha1>Gengar</lable>
-                    </div><!--personagem4-->
-                    <div class="personagem5">
-                        <img src="{{imagem5}}" alt="gastly" id='gastly' width="300" height='300' />
-                        <span>Gastly</span>
-                    </div><!--personagem5-->
-                    <div class="personagem6">
-                        <img src="{{imagem6}}" alt="haunter" width="300" height='300' />
-                        <span>Haunter</span>
-                    </div><!--personagem6-->
-                </div><!--pokmons_2--> 
-            </div><!--container -->
+                <!--personagem1-->
 
+                <div class="personagem2" id="dragonite">
+                    <a href="#openModal2" id="open_href2"></a>
+                    <img src="{{imagem2}}" alt="dragonite" width="300" height='300'
+                        onclick="borda_dragonite('dragonite')" />
+                    <div id="openModal2" class="modalDialog">
+                        <div>
+                            <a href="#close" id="close2"><img src="imagemAT2" alt="gastly" /></a>
+
+                        </div>
+                    </div>
+                    <span>Dragonite</span>
+                </div>
+                <!--personagem2-->
+                <div class="personagem3">
+                    <a href="#openModal3"><img src="{{imagem1}}" alt="charizard" width="300" height="300" /></a>
+
+                    <div id="openModal3" class="modalDialog">
+                        <div>
+                            <a href="#close" title="Close" class="close3"><img src="{{imagemAT3}}" alt="gastly" /></a>
+                        </div>
+                    </div>
+                    <span>Mega Charizard X</span>
+                </div>
+                <!--personagem3-->
+            </div>
+            <!--pokmons_1-->
+
+            <div class="form_bloco">
+                <input type="submit" class="form_enviar" value="Enviar!" />
+            </div>
+            <!--form_bloco-->
+        </form>
+        <button onclick="progress();modal_fechar()">Atacar</button>
+    </div>
+    <!--container-->
+    <div class='container'>
+        <div class="linha_container">
+            <h1>Pokmons Inimigos</h1>
+        </div>
+        <div class="pokemons_2">
+            <div class="personagem4" id="borda_gengar">
+
+                <progress class="progress-bar" id="progress_gengar" value="100" max="100"></progress>
+                <img src="{{imagem4}}" alt="gengar" width="300" height='300' onclick="borda_gengar('borda_gengar')" />
+                <label for=escolha1>Gengar</lable>
+            </div>
+            <!--personagem4-->
+            <div class="personagem5">
+                <img src="{{imagem5}}" alt="gastly" id='gastly' width="300" height='300' />
+                <span>Gastly</span>
+            </div>
+            <!--personagem5-->
+            <div class="personagem6">
+                <img src="{{imagem6}}" alt="haunter" width="300" height='300' />
+                <span>Haunter</span>
+            </div>
+            <!--personagem6-->
+        </div>
+        <!--pokmons_2-->
+    </div>
+    <!--container -->
+    <script type="text/javascript" src="index.js"></script>
 
 </body>
+
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+
+    <title>Calculadora de Danos</title>
+</head>
+
+<body>
+    <div class="bloco">
+        <h1 id="titulo">Batalha Pokémon</h1>
+    </div>
+    <!--bloco-->
+    <div class="lista_pokemons_1">
+        {% for pokemon in pokemons_1 %}
+        <div class="card_pokemons" data-nome='{{pokemon.nome}}' data-valor='{{pokemon.valor}}'>
+            <img class="pokemon_{{pokemon.valor}}" src="{{pokemon.imagem}}">
+            <div class="nome_pokemon">
+                <b>{{pokemon.nome}}</b>
+            </div>
+            <!--nome_pokemon-->
+        </div>
+        <!--card_pokemons-->
+
+        {% endfor %}
+
+    </div>
+    <!--lista_pokemons_1-->
+    <button class="atacar" onclick="progress()">Atacar</button> 
+    <div class="lista_pokemons_2">
+        {% for pokemon in pokemons_2 %}
+        <div class="card_pokemons" data-nome='{{pokemon.nome}} ' >
+
+            <img class="pokemon_{{pokemon.valor}}" src="{{pokemon.imagem}}">
+            <progress class="progress-bar" id="progress_gengar"  value="100" max="100" ></progress> 
+            <div class="nome_pokemon">
+                <b>{{pokemon.nome}}</b>
+
+            </div>
+            <!--nome_pokemon-->
+        </div>
+        <!--card_pokemons-->
+
+        {% endfor %}
+
+        </div>
+        <!--lista_pokemons_2-->
+        <script type="text/javascript" src="/static/index.js"></script>
+
+
+</body>
+
+</html>

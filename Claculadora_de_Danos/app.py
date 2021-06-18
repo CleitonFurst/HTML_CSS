@@ -34,7 +34,7 @@ def home():
         escolha = request.form['escolha']
         print(escolha)
         if escolha == 'gengar':
-            valor1 = 50
+            valor1 = 10
 
         valor2 = 200
         valor3 = 200
