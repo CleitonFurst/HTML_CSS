@@ -23,27 +23,56 @@
       flex-wrap: wrap;
       justify-content: center;
   }
-  .lista_pokemons_1{
+  .dragons{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     border: 10px solid;
     border-radius: 30px;
+    background:rgb(0, 0, 0);
   }
-  .card_pokemons.selecionado {
-    background-color: #0033ff;
+.dragon.selecionado {
+    background-color: #0f91c5;
+    font-size: 25px;
+}
+.fantasma.selecionado2 {
+  background-color: #0f91c5;
+  font-size: 25px;
 }
 
-  .card_pokemons:hover {
-    background: rgb(177, 174, 9);
+.dragon:hover {
+    
+    font-size: 25px;
+    width: 600px;
+    
 }
-  .card_pokemons{
+.fantasma:hover {
+ 
+  font-size: 25px;
+  width: 600px;
+  
+}
+  .dragon{
     background: white;
-    border: 30px solid #3359ec;
+    border:2px solid #3359ec;
     
     border-radius: 45px;
     box-shadow: 0 1px 6px rgba(241, 18, 18, 0.28);
-    margin: 10px;
+    margin: 2px;
+    padding: 20px 0;
+    text-align: center;
+    width: 500px;
+
+    
+      
+  }
+  .fantasma{
+    background: white;
+    border:2px solid #3359ec;
+    
+    border-radius: 45px;
+    box-shadow: 0 1px 6px rgba(241, 18, 18, 0.28);
+    margin: 2px;
     padding: 20px 0;
     text-align: center;
     width: 500px;
@@ -54,48 +83,48 @@
 
   .pokemon_1{
     
-    width: 400px;
-    height: 400px;   
+    width: 300px;
+    height: 300px;   
     position: relative;  
     border-radius: 40px;
     background-color: rgb(16, 111, 189);
      
   }
   .pokemon_2{
-    width: 400px;
-    height: 400px;    
+    width: 300px;
+    height: 300px;    
     position: relative; 
     border-radius:40px;
     background-color: rgb(184, 104, 38);
      
   }
   .pokemon_3{
-    width: 400px;
+    width: 300px;
     position: relative;
-    height: 400px;  
+    height: 300px;  
     border-radius: 40px;
     background-color: rgb(51, 56, 63);
      
   }
   .pokemon_4{
-    width: 400px;
-    height:400px;
+    width: 300px;
+    height:300px;
     position: relative; 
     border-radius: 40px;
     background-color: rgb(138, 118, 206);
      
   }
   .pokemon_5{
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 300px;
     position: relative;  
     border-radius: 40px;
     background-color: rgb(92, 68, 170);
      
   }
   .pokemon_6{
-    width: 90%;
-    height: 80%;
+    width: 300px;
+    height: 300px;
     position: relative;  
     border-radius: 40px;
     background-color: rgb(156, 147, 182);
@@ -106,22 +135,23 @@
     
     justify-content: center;
   }
-  .lista_pokemons_2{
+  .fantasmas{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     border: 10px solid;
     border-radius: 30px;
+    background-color:#000000;
   }
   .progress-bar {
     /*--progress: 80;*/
-    height: 20px;
-    padding: 5px;
+    height:20px;
+    padding: 2px;
     background-color: rgb(0, 0, 0);
     display: flex;
     border-radius: 10px;
     width: 95%;
     position: relative;
-    margin: 10px;   
-    border-radius: 10px;
+    margin: 3px;   
+    border-radius: 30px;
 }

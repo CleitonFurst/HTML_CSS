@@ -1,56 +1,101 @@
-const cardPokemons = document.querySelectorAll(".card_pokemons");/*manipulkmkkkkk  ;+
-  ar elementos da classe */
 
-var pok1 = 0
-var pok2 = 0
-var pok3 = 0
-var pok4 = 0
-var pok5 = 0
-var pok6 = 0
-for (const cardPokemon of cardPokemons) {// igual ao for feito no html usando python
-    // para cada card dentro do grupo 
-    cardPokemon.addEventListener('click', function () {
+const dragons = document.querySelectorAll(".dragon");
+const fantasmas = document.querySelectorAll(".fantasma");
+let vida_Gastly = 100;
+let vida_Gengar = 100;
+let vida_Haunter = 100;
 
-        const nomePokemon = this.getAttribute('data-nome');
-        if (!this.classList.contains('selecionado')) {
-            this.classList.add('selecionado');//Controlando o que esta selecionado 
+let escolha = 0;
+let escolha2 = 0;
 
-            pokmons = nomePokemon
 
-            if (pokmons == 'Lugia') {
-                pok1 = 1
-            }
-            if (pokmons == 'Gastly')
-                pok2 = 1
-
+for (const dragon of dragons) {
+    dragon.addEventListener('click', function () {
+        if (document.getElementsByClassName('selecionado').length < 1) {
+            this.classList.add('selecionado');
+            escolha = this.getAttribute('data-nome');
+            //vida = this.getAttribute('data-vida');
+          
         } else {
             this.classList.remove('selecionado');
-            const pokemonsSelecionados = document.querySelectorAll('.selecionado');//puxar o nome do card que foi clkicado e trazer quandos cards ainda estão selecionados 
-            if (pokemonsSelecionados.length >= 1) {
-                pokemonSelecionado.innerHTML = `VOcê desmarcor o pokemon <b>${nomePokemon}</b>. Restantes:<b>${pokemonsSelecionados.length}</b>`;
-
-            } else {
-                pokemonSelecionado.innerHTML = 'Selecione um Pokemon';
-            }
-
-
         }
 
-
-
-
-
-    })//indica para o javascript o que vai acontecer quandoi clicar na imagem 
+    })
 
 }
+for (const fantasma of fantasmas){
+    fantasma.addEventListener('click', function (){
+        if(document.getElementsByClassName('selecionado2').length < 1){
+            this.classList.add('selecionado2');//adiciona aclasse para a tag
+            escolha2 = this.getAttribute('data-nome');
+            //vida = this.getAttribute('data-vida')
+            alert(escolha2)
+        }else{
+            this.classList.remove('selecionado2');
+        }
 
-var vida = 100
+    })
+}
+function progress(){
+    alert(escolha)
+    alert(escolha2)
+    
+    if ((escolha == 'Lugia') && (escolha2 == 'Gastly')){                 
+        vida_Gastly = vida_Gastly - 10
+        document.getElementById("vida_4").value = vida_Gastly;
+        alert(vida_Gastly)
+    
+    }
+    if ((escolha == 'Lugia') && (escolha2 == 'Gengar')){                 
+        vida_Gengar = vida_Gengar - 10
+        document.getElementById("vida_5").value = vida_Gengar;
+        alert(vida_Gengar)
 
-function progress() {
-    if (pok1 == 1) {
+    }
+    if ((escolha == 'Lugia') && (escolha2 == 'Haunter')){                 
+        vida_Haunter = vida_Haunter - 10
+        document.getElementById("vida_6").value = vida_Haunter;
+        alert(vida_Haunter)
+    
+    }
+    if ((escolha == 'Dragonite') && (escolha2 == 'Gastly')){                 
+        vida_Gastly = vida_Gastly - 10
+        document.getElementById("vida_4").value = vida_Gastly;
+        alert(vida_Gastly)
+    
+    }
+    if ((escolha == 'Dragonite') && (escolha2 == 'Gengar')){                 
+        vida_Gengar = vida_Gengar - 10
+        document.getElementById("vida_5").value = vida_Gengar;
+        alert(vida_Gengar)
 
-        vida = vida - 10
-        document.getElementById("progress_gengar").value = vida;
+    }
+    if ((escolha == 'Dragonite') && (escolha2 == 'Haunter')){                 
+        vida_Haunter = vida_Haunter - 10
+        document.getElementById("vida_6").value = vida_Haunter;
+        alert(vida)
+    
+    }
+    if ((escolha == 'Mega Charizard X') && (escolha2 == 'Gastly')){                 
+        vida_Gastly = vida_Gastly - 10
+        document.getElementById("vida_4").value = vida_Gastly;
+        alert(vida_Gastly)
+    
+    }
+    if ((escolha == 'Mega Charizard X') && (escolha2 == 'Gengar')){                 
+        vida_Gengar = vida_Gengar - 10
+        document.getElementById("vida_5").value = vida_Gengar;
+        alert(vida_Gengar)
+
+    }
+    if ((escolha == 'Mega Charizard X') && (escolha2 == 'Haunter')){                 
+        vida_Haunter = vida_Haunter - 10
+        document.getElementById("vida_6").value = vida_Haunter;
+        alert(vida_Haunter)
+    
     }
 
+
 }
+
+
