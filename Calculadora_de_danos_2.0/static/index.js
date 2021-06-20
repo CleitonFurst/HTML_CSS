@@ -46,8 +46,7 @@ function progress(){
             vida_Gastly = vida_Gastly - Math.floor(Math.random() * 51);
             document.getElementById("open_href").click();
             document.getElementById("ataque").src = 'https://archive-media-1.nyafuu.org/vp/image/1486/31/1486318311062.gif';            
-            document.getElementById('vida_4').value = vida_Gastly;
-            alert(vida_Gastly)
+            document.getElementById('vida_4').value = vida_Gastly;            
             if (vida_Gastly < 0){
                 document.getElementById('pokemon_4').src = 'https://i.pinimg.com/originals/43/e7/48/43e748bd92a5eb5813af7e0926adcaa4.gif'; 
             }
