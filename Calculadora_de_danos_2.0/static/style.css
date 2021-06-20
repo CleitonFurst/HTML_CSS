@@ -40,16 +40,15 @@
   font-size: 25px;
 }
 
+
 .dragon:hover {
     
-    font-size: 25px;
-    width: 600px;
-    
+    background-color: brown;
 }
 .fantasma:hover {
  
-  font-size: 25px;
-  width: 600px;
+  background-color: brown;
+ 
   
 }
   .dragon{
@@ -61,7 +60,7 @@
     margin: 2px;
     padding: 20px 0;
     text-align: center;
-    width: 500px;
+    width: 400px;
 
     
       
@@ -75,7 +74,7 @@
     margin: 2px;
     padding: 20px 0;
     text-align: center;
-    width: 500px;
+    width: 400px;
 
     
       
@@ -83,52 +82,76 @@
 
   .pokemon_1{
     
-    width: 300px;
-    height: 300px;   
+    width: 200px;
+    height: 200px;   
     position: relative;  
     border-radius: 40px;
     background-color: rgb(16, 111, 189);
      
   }
   .pokemon_2{
-    width: 300px;
-    height: 300px;    
+    
+    width: 200px;
+    height: 200px;     
     position: relative; 
     border-radius:40px;
     background-color: rgb(184, 104, 38);
      
   }
   .pokemon_3{
-    width: 300px;
+     
+    width: 200px;
+    height: 200px;  
     position: relative;
-    height: 300px;  
+    
     border-radius: 40px;
     background-color: rgb(51, 56, 63);
      
   }
   .pokemon_4{
-    width: 300px;
-    height:300px;
+     
+    width: 200px;
+    height: 200px;  
     position: relative; 
     border-radius: 40px;
     background-color: rgb(138, 118, 206);
      
   }
   .pokemon_5{
-    width: 320px;
-    height: 300px;
+    
+    width: 220px;
+    height: 200px;  
     position: relative;  
     border-radius: 40px;
     background-color: rgb(92, 68, 170);
      
   }
   .pokemon_6{
-    width: 300px;
-    height: 300px;
+    
+    width: 200px;
+    height: 200px;  
     position: relative;  
     border-radius: 40px;
     background-color: rgb(156, 147, 182);
      
+  }
+  .atacar{
+    border: 0;
+    height:50px;
+    width:200px;
+ 
+   
+    text-align: center;
+    color: #fff;
+    
+    border-radius: 20px;
+    background-color: rgba(220, 0, 0, 1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+      
+   
+    
   }
   .nome_pokemon{
     display: flex;    
@@ -147,11 +170,44 @@
     /*--progress: 80;*/
     height:20px;
     padding: 2px;
-    background-color: rgb(0, 0, 0);
-    display: flex;
+    background: rgb(0, 0, 0);
+    
     border-radius: 10px;
     width: 95%;
-    position: relative;
-    margin: 3px;   
+    border-left: 30px;
+      
     border-radius: 30px;
+}
+
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog>div {
+  width: 400px;
+  
+  position: relative;
+  margin: 10% auto;
+  padding: 200px 200px 13px 20px;
+  border-radius: 10px;
+}
+#ataque{
+  border-radius:60px;
 }

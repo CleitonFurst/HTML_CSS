@@ -15,11 +15,18 @@
         <h1 id="titulo">Batalha Pokémon</h1>
     </div>
     <!--bloco-->
-    <div class="dragons" >
+    <div class="dragons">
         {% for pokemon in pokemons_1 %}
-        <div class="dragon" data-nome='{{pokemon.nome}}' data-valor='{{pokemon.valor}}' data-vida ='{{pokemon.vida}}'>
-            <img class="pokemon_{{pokemon.valor}}" src="{{pokemon.imagem}}"> 
-            <progress class="progress-bar" id="vida_{{pokemon.valor}}" value={{pokemon.vida}} max="100"></progress>
+        <div class="dragon" data-nome='{{pokemon.nome}}' data-valor='{{pokemon.valor}}' data-vida='{{pokemon.vida}}' data-imagem = '{{pokemon.imagem}}'>
+            <img class="pokemon_{{pokemon.valor}}" src="{{pokemon.imagem}}">
+            <!--<progress class="progress-bar" id="vida_{{pokemon.valor}}" value={{pokemon.vida}} max="100"></progress>-->
+            <a href="#openModal"  id="open_href" ></a>           
+            <div id="openModal" class="modalDialog">
+                <div>
+                    <a href="#close"  id="close2" ><img id = "ataque" src="https://i.gifer.com/GI3D.gif" alt="gastly" /></a>
+
+                </div>
+            </div>
             <div class="nome_pokemon">
                 <b>{{pokemon.nome}}</b>
             </div>
@@ -30,20 +37,14 @@
         {% endfor %}
 
     </div>
-    <!--lista_pokemons_1-->
-
-
+    <!--lista_pokemons_1-->     
     <button class="atacar" onclick="progress()">Atacar</button>
-  
-
-
-
+    <button class="atacar" onclick="reiniciar()">Novo Jogo</button>
     <div class="fantasmas">
         {% for pokemon in pokemons_2 %}
-        <div class="fantasma" data-nome='{{pokemon.nome}}' data-vida='{{pokemon.vida}}'data-valor = '{{pokemon.valor}}'>
-
-            <img class="pokemon_{{pokemon.valor}}" src="{{pokemon.imagem}}">
-            <progress class="progress-bar" id="vida_{{pokemon.valor}}" value={{pokemon.vida}} max="100"></progress>
+        <div class="fantasma" data-nome='{{pokemon.nome}}' data-vida='{{pokemon.vida}}' data-valor='{{pokemon.valor}}'>
+            <img class="pokemon_{{pokemon.valor}}" id="pokemon_{{pokemon.valor}}" src="{{pokemon.imagem}}">
+            <progress class="progress-bar" id="vida_{{pokemon.valor}}" value={{pokemon.vida}} min="0" max="100" color='red'></progress>
             <div class="nome_pokemon">
                 <b>{{pokemon.nome}}</b>
 
@@ -56,10 +57,7 @@
 
     </div>
     <!--lista_pokemons_2-->
-   
     <script type="text/javascript" src="/static/index.js"></script>
-
-
 </body>
 
 </html>

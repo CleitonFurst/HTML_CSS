@@ -61,9 +61,9 @@ function progress() {
 function modal_fechar() {
 
 
-    if (cont == 1 && cont2 == 1) {
+    
         document.getElementById("open_href1").click();
-    }
+ 
 
     //document.getElementById("openModal2").style.opacity = "0";
 
