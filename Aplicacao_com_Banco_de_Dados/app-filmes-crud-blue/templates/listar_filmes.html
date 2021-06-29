@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/pages/read_all.css">
+    
+    <title>Lista de Filmes</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+
+    <div class="bloco">
+        <h2>Visualizar todos os registros</h2>
+    </div><!--titulo-->
+    <div class="bloco">
+        <table class="tabela">
+            <tr class="tabela_header">
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Imagem</td>
+                <td>Ações</td>
+            </tr><!--th tag usada para criar o cabeçalho da tabela e td usada para colocar o nome das colunas da tabela   -->
+        
+        <tbody>
+            {% for filme in registros %}
+                <tr>   
+                    <td>{{filme.id}}</td>             
+                    <td>{{filme.nome}}</td>
+                    <td>
+                        <img src="{{filme.imagem_url}}" alt="{{filme.nome}}">
+                    </td>
+                    <td>
+                        <a href="/read/{{filme.id}}" class="botao">Visualizar</a>
+                    </td>
+
+                </tr>
+
+            
+            {% endfor %}
+        </table>
+
+        </tbody><!--corpo da tabela que vai listar os dados-->
+    </div><!--tabela-->
+</body>
+</html>
