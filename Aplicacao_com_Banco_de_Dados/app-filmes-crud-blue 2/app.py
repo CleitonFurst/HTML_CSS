@@ -1,38 +1,36 @@
 from flask import Flask, Blueprint, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 bp = Blueprint('app', __name__)  # o nome da aplicação vai ser app
 
-registros = [{
-    "id": 1,
-    "nome": "Futurama",
-    "imagem_url": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/78/30/52/19784883.jpg"
+#Database
+user = 'qjgkpxtd'
+password = 'DmvmOS7fkB8gJbxPN0vxpWbwJJ2ZUTCm'
+host = 'tuffi.db.elephantsql.com'
+database = 'qjgkpxtd'
 
-},
-    {
-    "id": 2,
-    "nome": "Sherlock Holmes",
-    "imagem_url": "https://upload.wikimedia.org/wikipedia/pt/4/4e/Sherlock_Holmes_%28poster_de_2009%29.jpg"
-},
-    {
-    "id": 3,
-    "nome": "A liga Extraordinária",
-    "imagem_url": "https://upload.wikimedia.org/wikipedia/pt/thumb/a/ab/The_League_of_Extraordinary_Gentlemen.jpg/240px-The_League_of_Extraordinary_Gentlemen.jpg"
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@{host}/{database}'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-},
-{
-    "id": 4,
-    "nome": "O Medalhão",
-    "imagem_url": "https://media.fstatic.com/htfnfWBVp6l3vQbzhQNw2XfaAzg=/268x386/smart/media/movies/covers/2018/02/37174_f1.jpg"
 
-},
-{
-    "id": 5,
-    "nome": "New Police Story",
-    "imagem_url": "https://br.web.img3.acsta.net/medias/nmedia/18/63/60/28/18695184.jpg"
 
-}
-]
+
+# Modelos Filmes
+db = SQLAlchemy(app)
+class Filmes(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(255), nullable=False)
+    imagem_url = db.Column(db.String(255), nullable=False)
+    def __init__(self,nome,imagem_url):
+        self.nome = nome
+        self.imagem_url = imagem_url
+        pass
+    @staticmethod
+    def read_all():
+        #SELECT * FROMM filmes
+        return Filmes.query.all()
+
 
 
 @bp.route('/')
@@ -42,11 +40,12 @@ def index():
 
 @bp.route('/read')
 def listar_filmes():
-    return render_template('listar_filmes.html',
-                            registros = registros)
+    registros = Filmes.read_all()
+    return render_template('listar_filmes.html',registros = registros)
 
 @bp.route('/read/<filme_id>')
 def lista_detalhe_filme(filme_id):
+    
     return 'Página em construlção para o filme com ID -> ' + filme_id
 
 # pega os dados do blueprint da nossa aplicação (nome do app e as rotas)e registra dentro do app
