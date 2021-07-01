@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/pages/create.css">
+    <title>CRUD parte 2</title>
+</head>
+
+<body>
+    {% include 'header.html' %}
+        <div class="bloco">]
+            <h2>Inserir Filmes</h2>  
+        </div>
+    {% if id_atribuido %}
+        <div class="bloco">
+            <p>Filme inserido com sucesso! </br>
+            </br>
+                O ID atribuido foi <span class="id_atribuido">{{id_atribuido}}</span>.</br>
+                <a href="/read/{{id_atribuido}}" class="botao">Visualizar Filme</a>
+
+
+
+            </p>
+
+
+
+
+        </div>
+
+</body>
+
+</html>
